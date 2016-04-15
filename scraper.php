@@ -1,4 +1,5 @@
 <?php
+require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 $page_counter = 0;
 $next_page = FALSE;
