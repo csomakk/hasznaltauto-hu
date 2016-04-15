@@ -46,7 +46,7 @@ foreach ($html->find("div.talalati_lista") as $talalat) {
             )
         );
 }
-    foreach ($html->find("div.oldalszamozas a[title=Következő]") as $kovetkezo) {
+    foreach ($html->find("div.oldalszamozas a[title=Következő oldal]") as $kovetkezo) {
     print $page_counter . "\n";
     }
 
