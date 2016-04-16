@@ -3,7 +3,6 @@ require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 $page_counter = 0;
 $next_page = FALSE;
-
 do { 
    $kovetkezo = "";
    $page_counter++;
@@ -21,7 +20,7 @@ do {
       foreach ($talalat->find("div.talalati_lista_vetelar strong") as $ar) {
         $ar = str_replace("&nbsp;", " ", $ar->innertext);
       }
-      foreach ($talalat->find("div.talalati_lista_infosor") as $info) {
+      foreach ($talalat->find("p.talalati_lista_infosor") as $info) {
         $info = str_replace("&ndash;", ",", $info->innertext);
         $info = str_replace("&nbsp;", " ", $info);
         $info = str_replace("&sup3;", "3", $info);
@@ -34,7 +33,7 @@ do {
       scraperwiki::save(   
         array('id'),
         array(
-          'id' => $kod + "-" + date("Y/m/d"),
+          'id' => $kod * 100000000 + "-" + date("Y/m/d"),
           'kod' => $kod,
           'type' => $el->innertext,
           'price' => $ar,
