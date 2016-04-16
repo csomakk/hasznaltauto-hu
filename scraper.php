@@ -6,7 +6,7 @@ $next_page = FALSE;
 do { 
    $kovetkezo = "";
    $page_counter++;
-   $pageurl = "http://www.hasznaltauto.hu/talalatilista/auto/0P5EDPTSFJF2GPQWMZ8FE4PFQ0AEPWW8WTD7U5FKC38K84H2R8G1OR2Z102S3SSE9LJG2ORW356KS2I9QPOG3CPYEOYROPKTWW8H9J8H3OIWP86DTCG02PYHLFM9M7DWJQWE7QWY3M6HADCSKLY5CUITACLM537UKTJUAE1CYZE3WRISDY6Z0UCA7D6AHGWKF6C6RG/page{$page_counter}";
+   $pageurl = "http://www.hasznaltauto.hu/talalatilista/auto/T4R1C47G6M6KO453QWL61U465TH1433L37CE8R6FPALFLUZK9LOS29KWSTKGAGG1YDMOK293ARIFGK0Y542OAP4J12J924F733LZYMLZA2034LIC7POTK4JZD6QYQEC3M531E53JAQIZHCPGFDJRP807HPDQRAE8F7M8H1SPJW1A390GCJIWT8PHECIHZO3F6IPI9O/page{$page_counter}";
    
    $html_content = scraperWiki::scrape($pageurl);
     
@@ -20,7 +20,7 @@ do {
       foreach ($talalat->find("div.talalati_lista_vetelar strong") as $ar) {
         $ar = str_replace("&nbsp;", " ", $ar->innertext);
       }
-      foreach ($talalat->find("p.talalati_lista_infosor") as $info) {
+      foreach ($talalat->find("div.talalati_lista_infosor") as $info) {
         $info = str_replace("&ndash;", ",", $info->innertext);
         $info = str_replace("&nbsp;", " ", $info);
         $info = str_replace("&sup3;", "3", $info);
@@ -33,7 +33,7 @@ do {
       scraperwiki::save(   
         array('id'),
         array(
-          'id' => $kod * 100000000 + "-" + date("Y/m/d"),
+          'id' => $kod * 1000 + "-" + date("Y/m/d"),
           'kod' => $kod,
           'type' => $el->innertext,
           'price' => $ar,
