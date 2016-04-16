@@ -34,7 +34,7 @@ do {
       scraperwiki::save(   
         array('id'),
         array(
-          'id' => $kod + "-" date("Y/m/d")
+          'id' => $kod + "-" + date("Y/m/d"),
           'kod' => $kod,
           'type' => $el->innertext,
           'price' => $ar,
