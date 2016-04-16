@@ -42,6 +42,7 @@ do {
           'hub' => $info[2],
           'power' => $info[3],
           'url' => $url,
+          'felsz' => $felszereltseg,
         )
       );
    }
