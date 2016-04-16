@@ -21,7 +21,7 @@ do {
       foreach ($talalat->find("div.talalati_lista_vetelar strong") as $ar) {
         $ar = str_replace("&nbsp;", " ", $ar->innertext);
       }
-      foreach ($talalat->find("p.talalati_lista_infosor") as $info) {
+      foreach ($talalat->find("div.talalati_lista_infosor") as $info) {
         $info = str_replace("&ndash;", ",", $info->innertext);
         $info = str_replace("&nbsp;", " ", $info);
         $info = str_replace("&sup3;", "3", $info);
