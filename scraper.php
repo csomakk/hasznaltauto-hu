@@ -27,6 +27,9 @@ do {
         $info = str_replace("&sup3;", "3", $info);
         $info = explode(",",$info);
       }
+      foreach ($talalat->find("div.felszereltseg") as $felszereltseg) {
+        $felszereltseg = str_replace("&nbsp;", " ", $felszereltseg->innertext);
+      }
    
       scraperwiki::save(   
         array('id'),
