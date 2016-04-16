@@ -33,8 +33,7 @@ do {
       scraperwiki::save(   
         array('id'),
         array(
-          'id' => $kod * 1000 + "-" + date("Y/m/d"),
-          'kod' => $kod,
+          'id' => $kod,
           'type' => $el->innertext,
           'price' => $ar,
           'info' => $info,
