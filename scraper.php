@@ -43,6 +43,7 @@ do {
           'power' => $info[3],
           'url' => $url,
           'felsz' => $felszereltseg,
+          'crapedate' => date("Y/m/d"),
         )
       );
    }
