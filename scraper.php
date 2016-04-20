@@ -34,7 +34,7 @@ do {
       scraperwiki::save(   
         array('id'),
         array(
-          'id' => $kod * 100000000 + "-" + date("Y/m/d"),
+          'id' => $kod * 100000 + "-" + date("m") * 100 + date("d"),
           'kod' => $kod,
           'type' => $el->innertext,
           'price' => $ar,
